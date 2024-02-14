@@ -5,31 +5,31 @@
 
 ### 2. Disabling root login for security purposes
 
-```su root```  
+`su root`  
 ```
 echo root:$(openssl rand -base64 64) && echo root:$(openssl rand -base64 64) | chpasswd && passwd -l root && exit
 ```
 
 ### 3. Enable all kernels to build package
 
-```sudo nano /etc/makepkg.conf```  
-```MAKEFLAGS="-j$(nproc)"```
+`sudo nano /etc/makepkg.conf`  
+`MAKEFLAGS="-j$(nproc)"`
 ![screenshot-3](./images/screenshot-3.png)
 
 ### 4. Updating packages
 
-```sudo pacman -Suyy --noconfirm```
+`sudo pacman -Suyy --noconfirm`
 
 ### 5. Oh My Zsh
 
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```  
-```reboot```
+`reboot`
 
 ### 6. Enable the firewall (UFW)
 
-```sudo ufw enable```
+`sudo ufw enable`
 
 ### 7. AUR
 
@@ -42,19 +42,19 @@ sudo pacman -S --noconfirm base-devel && git clone https://aur.archlinux.org/yay
 ```
 yay -S --noconfirm libreoffice-fresh-ru vlc qt5-wayland qt6-wayland keepassxc nodejs wlroots xdg-desktop-portal-wlr obs-studio amberol transmission-qt gparted gitkraken visual-studio-code-bin tree neovim && flatpak install flathub com.google.Chrome ru.yandex.Browser
 ```  
-```reboot```
+`reboot`
 
 ### 9. Fixs
 
 ##### Fix Amberol
-```sudo nano .config/mimeapps.list```  
+`sudo nano .config/mimeapps.list`  
 [Default Applications]  
-```inode/directory=org.gnome.Nautilus.desktop```
+`inode/directory=org.gnome.Nautilus.desktop`
 
 ##### Fix AirPods Pro v1 connection
-```sudo nano /etc/bluetooth/main.conf```  
-```ControllerMode = bredr```  
-```sudo systemctl restart bluetooth.service```  
+`sudo nano /etc/bluetooth/main.conf`  
+`ControllerMode = bredr`  
+`sudo systemctl restart bluetooth.service`  
 
 ##### Disable default Night light
 ```
